@@ -1,0 +1,6 @@
+.my-title {
+  display: flex;
+  justify-content: center;
+  max-width: 20%;
+  max-height: 10%;
+}

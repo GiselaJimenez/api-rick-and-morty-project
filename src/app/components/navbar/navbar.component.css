@@ -1,0 +1,20 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+img {
+  max-width: 10%;
+  max-height: 5%;
+  width: auto;
+  height: auto;
+}
+
+span {
+  font-family: 'rick-and-morty';
+  font-size: 30px;
+}
+
+a:not(:active), span {
+  color:rgb(92, 203, 247);
+  -webkit-text-stroke: 0.4px greenyellow;
+}
