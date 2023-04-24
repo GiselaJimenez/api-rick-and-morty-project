@@ -5,6 +5,11 @@
   src: url(./assets/fonts/get_schwifty.ttf) format("truetype");
 }
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  background: url(https://i.pinimg.com/originals/62/40/53/624053b5cf52686164499bfd2f7e4a85.png);
+  background-size: auto;
+  background-repeat: repeat;
+}
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
