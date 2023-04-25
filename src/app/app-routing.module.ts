@@ -5,7 +5,8 @@ import { CharacterslistComponent } from './components/characterslist/charactersl
 
 const routes: Routes = [
   { path:"home", component: HomeComponent },
-  { path:"characters", component: CharacterslistComponent }
+  { path:"characters", component: CharacterslistComponent },
+  { path:"character-details", component:CharacterslistComponent }
 ];
 
 @NgModule({

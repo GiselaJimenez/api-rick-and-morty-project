@@ -1,1 +1,11 @@
-<p style="color: white;">characterslist works!</p>
+<div fxLayout="row" *ngFor="let item of data">
+  <mat-card class="card" routerLink="character-details">
+    <mat-card-header>
+      <img src="{{ item.image }}" alt="{{ item.name }}">
+    </mat-card-header>
+    <mat-card-content>
+      <span class="title"> {{ item.name | uppercase}}  </span> <br>
+      <span class="aditional"> {{ item.status }} <br> {{ item.species }} </span>
+    </mat-card-content>
+  </mat-card>
+</div>

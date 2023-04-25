@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class APiService {
 
   constructor(private http: HttpClient) { }
 
@@ -13,5 +13,9 @@ export class ServiceService {
 
   public getData(option: string): Observable<any> {
     return this.http.get<any>(`${this.UrlApi}/${option}`)
+  }
+
+  public getDetails(id: number) {
+    return this.http.get<any>(`${this.UrlApi}/character/${id}`)
   }
 }

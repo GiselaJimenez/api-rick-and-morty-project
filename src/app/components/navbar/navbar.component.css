@@ -18,3 +18,7 @@ a:not(:active), span {
   color:rgb(92, 203, 247);
   -webkit-text-stroke: 0.4px greenyellow;
 }
+
+a:active {
+  color: pink;
+}
