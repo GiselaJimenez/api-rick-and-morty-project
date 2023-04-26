@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card class="card" *ngFor="let episode of data">
+    <mat-card-header>
+      <span class="title"> {{ episode.name | uppercase}}  </span>
+    </mat-card-header>
+    <mat-card-content>
+       <br>
+      <span class="aditional"> {{ episode }} <br> {{ episode }} </span>
+    </mat-card-content>
+    <!-- <button mat-button color="accent" [routerLink]="['/character-details', character.id]"> Details </button> -->
+  </mat-card>
+</div>
+<div class="custom-paginator">
+  <mat-paginator [length]="51"
+                 [pageSize]="20"
+                 [showFirstLastButtons]="true"
+                 aria-label="Select page"
+                 (page)="onPaginateChange($event)">
+  </mat-paginator>
+</div>

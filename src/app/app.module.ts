@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CharacterslistComponent } from './components/characterslist/character-list/characterslist.component'
 import { CharacterDetailsComponent } from './components/characterslist/character-details/character-details.component';
+import { EpisodeslistComponent } from './components/episodeslist/episodeslist.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CharacterDetailsComponent } from './components/characterslist/character
     HomeComponent,
     NavbarComponent,
     CharacterslistComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    EpisodeslistComponent
   ],
   imports: [
     BrowserModule,

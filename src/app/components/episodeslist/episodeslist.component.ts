@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { APiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-characterslist',
-  templateUrl: './characterslist.component.html',
-  styleUrls: ['./characterslist.component.css']
+  selector: 'app-episodeslist',
+  templateUrl: './episodeslist.component.html',
+  styleUrls: ['./episodeslist.component.css']
 })
-export class CharacterslistComponent implements OnInit{
+export class EpisodeslistComponent {
 
   constructor(private apiService: APiService) {}
 
@@ -17,7 +17,7 @@ export class CharacterslistComponent implements OnInit{
 
   private unsubcribe$ = new Subject<void>();
 
-  option = 'character'
+  option = 'episode'
 
   ngOnInit(): void {
     this.addData()
@@ -37,12 +37,8 @@ export class CharacterslistComponent implements OnInit{
   }
 
   onPaginateChange(event: any){
-    console.log(event)
     if(event.pageIndex > 0) {
       this.page = event.pageIndex + 1
-    }
-    if (event.pageIndex == 0) {
-      this.page = 1
     }
     this.addData()
   }
