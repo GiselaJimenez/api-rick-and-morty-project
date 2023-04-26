@@ -13,11 +13,11 @@ export class CharacterslistComponent implements OnInit{
 
   data: any[] = []
 
+  public page = 1
+
   private unsubcribe$ = new Subject<void>();
 
   option = 'character'
-
-  public page !: number
 
   ngOnInit(): void {
     this.addData()
@@ -26,10 +26,20 @@ export class CharacterslistComponent implements OnInit{
   ngOnDestroy() {this.unsubcribe$.next()}
 
   addData() {
-    this.apiService.getData(this.option)
+    console.log(this.page)
+    this.apiService.getData(this.option, this.page)
     .pipe(takeUntil(this.unsubcribe$)).
     subscribe(data=> {
+      if(data)
       this.data = data.results
     })
+    console.log("llama data")
+  }
+
+  onPaginateChange(event: any){
+    if(event.pageIndex > 0) {
+      this.page = event.pageIndex + 1
+    }
+    this.addData()
   }
 }

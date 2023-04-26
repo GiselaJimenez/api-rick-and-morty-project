@@ -1,1 +1,36 @@
-<p>character-details works!</p>
+<div>
+  <mat-list *ngIf="character$ | async as character">
+    <mat-list-item>
+      <span matListItemTitle>ID</span>
+      <span matListItemLine>{{ character.id }}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Name</span>
+      <span matListItemLine>{{ character.name }}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Species</span>
+      <span matListItemLine>{{ character.species }}</span>
+    </mat-list-item>
+    <mat-list-item *ngIf="character.type">
+      <span matListItemTitle>Type</span>
+      <span matListItemLine>{{ character.type }}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Gender</span>
+      <span matListItemLine>{{ character.gender }}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Origin</span>
+      <span matListItemLine>{{ character.origin.name }}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Location</span>
+      <span matListItemLine>{{ character.location.name }}</span>
+    </mat-list-item>
+    <img src="{{ character.image }}" alt="{{ character.name }}">
+  </mat-list>
+</div> <br>
+<button mat-raised-button color="warn" (click)="onGoBack()"> Go Back </button>
+
+

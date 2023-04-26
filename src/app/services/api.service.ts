@@ -11,8 +11,8 @@ export class APiService {
 
   private UrlApi = 'https://rickandmortyapi.com/api'
 
-  public getData(option: string): Observable<any> {
-    return this.http.get<any>(`${this.UrlApi}/${option}`)
+  public getData(option: string, page: number): Observable<any> {
+    return this.http.get<any>(`${this.UrlApi}/${option}/?page=${page}`)
   }
 
   public getDetails(id: number) {
