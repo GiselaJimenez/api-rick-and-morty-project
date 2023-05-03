@@ -40,6 +40,9 @@ export class EpisodeslistComponent {
     if(event.pageIndex > 0) {
       this.page = event.pageIndex + 1
     }
+    if (event.pageIndex == 0) {
+      this.page = 1
+    }
     this.addData()
   }
 }

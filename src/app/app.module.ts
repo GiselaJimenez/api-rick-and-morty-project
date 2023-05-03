@@ -8,6 +8,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +38,9 @@ import { EpisodeslistComponent } from './components/episodeslist/episodeslist.co
     MatPaginatorModule,
     MatListModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTreeModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

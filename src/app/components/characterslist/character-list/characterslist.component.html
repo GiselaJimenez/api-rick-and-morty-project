@@ -1,5 +1,10 @@
-<div class="container">
-  <mat-card class="card" *ngFor="let character of data">
+<div class="form-group">
+  <label for="search">Search by name:</label>
+  <input type="text" (keyup)="onSearchFilterChanged($event)" class="form-control" id="search">
+</div>
+
+<div class="container" *ngIf="filteredCharacters$ | async as filteredCharacters">
+  <mat-card class="card" *ngFor="let character of filteredCharacters">
     <mat-card-header>
       <img src="{{ character.image }}" alt="{{ character.name }}">
     </mat-card-header>
