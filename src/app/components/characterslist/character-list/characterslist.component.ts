@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject, forkJoin, map, of, takeUntil, tap } from 'rxjs';
+import { Observable, Subject, map, of, takeUntil, tap } from 'rxjs';
 import { APiService } from 'src/app/services/api.service';
 
 @Component({
@@ -12,7 +12,6 @@ export class CharacterslistComponent implements OnInit {
   searchTermChanged$ = new Subject<any>();
   filteredCharacters$ = new Observable<any>();
   characters$ = new Observable<any>();
-  results!: any[];
 
   constructor(private apiService: APiService, private http: HttpClient) {}
 
@@ -43,26 +42,6 @@ export class CharacterslistComponent implements OnInit {
         })
       )
       .subscribe();
-
-      const page1 = this.http.get('https://rickandmortyapi.com/api/episode?page=1');
-      const page2 = this.http.get('https://rickandmortyapi.com/api/episode?page=2');
-      const page3 = this.http.get('https://rickandmortyapi.com/api/episode?page=3');
-
-      forkJoin([page1, page2, page3]).subscribe((results: any[]) => {
-        // Aquí podemos hacer algo con los resultados de los tres llamados
-        console.log('Resultados:', results);
-
-        this.results = [
-          ...results[0]['results'],
-          ...results[1]['results'],
-          ...results[2]['results'],
-        ]
-
-        return this.results.map((e) => {
-          return { ...e, season: e['episode'].split("E")[0] };
-        });
-      });
-
   }
 
   onSearchFilterChanged(event: any) {
