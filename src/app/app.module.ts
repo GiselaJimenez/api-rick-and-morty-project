@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { EpisodeslistComponent } from './components/episodeslist/episodeslist.co
     HttpClientModule,
     FlexLayoutModule,
     MatTreeModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

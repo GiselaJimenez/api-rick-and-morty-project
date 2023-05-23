@@ -1,6 +1,8 @@
 <div class="form-group">
-  <label for="search">Search by name:</label>
-  <input type="text" (keyup)="onSearchFilterChanged($event)" class="form-control" id="search">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search by name:</mat-label>
+    <input matInput placeholder="Ex. Morty" (keyup)="onSearchFilterChanged($event)">
+  </mat-form-field>
 </div>
 
 <div class="container" *ngIf="filteredCharacters$ | async as filteredCharacters">

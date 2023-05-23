@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, map, of, takeUntil, tap } from 'rxjs';
 import { APiService } from 'src/app/services/api.service';
@@ -13,7 +12,7 @@ export class CharacterslistComponent implements OnInit {
   filteredCharacters$ = new Observable<any>();
   characters$ = new Observable<any>();
 
-  constructor(private apiService: APiService, private http: HttpClient) {}
+  constructor(private apiService: APiService) {}
 
   data: any[] = [];
 

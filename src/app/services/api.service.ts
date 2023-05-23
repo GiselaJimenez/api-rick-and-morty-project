@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,19 +26,19 @@ export class APiService {
     const page2 = this.http.get('https://rickandmortyapi.com/api/episode?page=2');
     const page3 = this.http.get('https://rickandmortyapi.com/api/episode?page=3');
 
-    forkJoin([page1, page2, page3]).subscribe((results: any[]) => {
+    return forkJoin([page1, page2, page3]).pipe(map((results: any[]) => {
       // Aquí podemos hacer algo con los resultados de los tres llamados
       console.log('Resultados:', results);
 
-      this.results = [
+      const flatResults = [
         ...results[0]['results'],
         ...results[1]['results'],
         ...results[2]['results'],
       ]
 
-      return this.results.map((e) => {
+      return flatResults.map((e) => {
         return { ...e, season: e['episode'].split("E")[0] };
       });
-    });
+    }));
   }
 }
