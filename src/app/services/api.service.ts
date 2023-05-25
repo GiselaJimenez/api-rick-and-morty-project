@@ -47,6 +47,7 @@ export class APiService {
     }));
   }
 
+  //method used for get all the locations without pagination
   public getAllLocations(){
     //get all the episodes from the API and save them in different variables
     const page1 = this.http.get('https://rickandmortyapi.com/api/location?page=1');
