@@ -1,3 +1,4 @@
+<!--visualise the data with cards-->
 <div class="container">
   <mat-card class="card" *ngFor="let location of data">
     <mat-card-header>
@@ -7,6 +8,5 @@
        <br>
       <span class="aditional"> {{ location.id }} <br> {{ location.type }} <br> {{ location.dimension }} </span>
     </mat-card-content>
-    <!-- <button mat-button color="accent" [routerLink]="['/character-details', character.id]"> Details </button> -->
   </mat-card>
 </div>

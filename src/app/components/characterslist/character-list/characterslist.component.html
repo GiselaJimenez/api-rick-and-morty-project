@@ -1,3 +1,4 @@
+<!-- search input, send the $event to know the value of the text in the input an detect the changes -->
 <div class="form-group">
   <mat-form-field class="example-full-width">
     <mat-label>Search by name:</mat-label>
@@ -5,6 +6,7 @@
   </mat-form-field>
 </div>
 
+<!--Subscription to the observable and visualise the data with cards-->
 <div class="container" *ngIf="filteredCharacters$ | async as filteredCharacters">
   <mat-card class="card" *ngFor="let character of filteredCharacters">
     <mat-card-header>
@@ -14,9 +16,13 @@
       <span class="title"> {{ character.name | uppercase}}  </span> <br>
       <span class="aditional"> {{ character.status }} <br> {{ character.species }} </span>
     </mat-card-content>
+
+    <!-- button to go to character details and send the id of the character wanted -->
     <button mat-button color="accent" [routerLink]="['/character-details', character.id]"> Details </button>
   </mat-card>
 </div>
+
+<!-- paginator from angular, use the $event to know the page value -->
 <div class="custom-paginator">
   <mat-paginator [length]="826"
                  [pageSize]="20"

@@ -1,4 +1,5 @@
 <div>
+  <!--Subscription to the observable and visualise the data with a list-->
   <mat-list *ngIf="character$ | async as character">
     <mat-list-item>
       <span matListItemTitle>ID</span>
@@ -31,6 +32,7 @@
     <img src="{{ character.image }}" alt="{{ character.name }}">
   </mat-list>
 </div> <br>
+<!-- button that returns to characterList  -->
 <button mat-raised-button color="warn" (click)="onGoBack()"> Go Back </button>
 
 

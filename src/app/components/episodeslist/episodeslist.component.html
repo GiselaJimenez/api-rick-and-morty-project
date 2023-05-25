@@ -1,3 +1,4 @@
+<!--visualise the data with cards-->
 <div class="container">
   <mat-card class="card" *ngFor="let episode of data">
     <mat-card-header>
@@ -7,6 +8,5 @@
        <br>
       <span class="aditional"> {{ episode.id }} <br> {{ episode.air_date }} </span>
     </mat-card-content>
-    <!-- <button mat-button color="accent" [routerLink]="['/character-details', character.id]"> Details </button> -->
   </mat-card>
 </div>
