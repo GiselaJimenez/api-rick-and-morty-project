@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { APiService } from 'src/app/services/api.service';
-import { Observable, Subject, map, of, takeUntil, tap } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 
 @Component({
   selector: 'app-episodeslist',

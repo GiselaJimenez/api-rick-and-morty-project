@@ -1,1 +1,12 @@
-<p>locations works!</p>
+<div class="container">
+  <mat-card class="card" *ngFor="let location of data">
+    <mat-card-header>
+      <span class="title"> {{ location.name | uppercase}}  </span>
+    </mat-card-header>
+    <mat-card-content>
+       <br>
+      <span class="aditional"> {{ location.id }} <br> {{ location.type }} <br> {{ location.dimension }} </span>
+    </mat-card-content>
+    <!-- <button mat-button color="accent" [routerLink]="['/character-details', character.id]"> Details </button> -->
+  </mat-card>
+</div>

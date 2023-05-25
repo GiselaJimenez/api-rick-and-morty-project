@@ -46,4 +46,28 @@ export class APiService {
       });
     }));
   }
+
+  public getAllLocations(){
+    //get all the episodes from the API and save them in different variables
+    const page1 = this.http.get('https://rickandmortyapi.com/api/location?page=1');
+    const page2 = this.http.get('https://rickandmortyapi.com/api/location?page=2');
+    const page3 = this.http.get('https://rickandmortyapi.com/api/location?page=3');
+
+    //join them with fork join and then we save the results in eh variable "flatResults"
+    return forkJoin([page1, page2, page3]).pipe(map((results: any[]) => {
+
+      const flatResults = [
+        ...results[0]['results'],
+        ...results[1]['results'],
+        ...results[2]['results'],
+      ]
+
+      console.log(flatResults)
+
+      //this function returns flatResults
+      return flatResults.map((e) => {
+        return { ...e };
+      });
+    }));
+  }
 }

@@ -2,10 +2,6 @@ img {
   max-width: 100%;
 }
 
-img:hover {
-  box-shadow: 5px 5px 10px #111;
-}
-
 button {
   margin-left: 1%;
 }
