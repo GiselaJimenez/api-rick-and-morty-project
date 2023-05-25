@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button';
@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatTableModule} from '@angular/material/table';
@@ -19,6 +19,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CharacterslistComponent } from './components/characterslist/character-list/characterslist.component'
 import { CharacterDetailsComponent } from './components/characterslist/character-details/character-details.component';
 import { EpisodeslistComponent } from './components/episodeslist/episodeslist.component';
+import { SpinnerInterceptor } from './components/interceptors/spinner.interceptor';
+import { SpinnerModule } from './components/spinner/spinner.module';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,7 @@ import { EpisodeslistComponent } from './components/episodeslist/episodeslist.co
     NavbarComponent,
     CharacterslistComponent,
     CharacterDetailsComponent,
-    EpisodeslistComponent
+    EpisodeslistComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +45,13 @@ import { EpisodeslistComponent } from './components/episodeslist/episodeslist.co
     FlexLayoutModule,
     MatTreeModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    SpinnerModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
