@@ -19,6 +19,7 @@ export class CharacterDetailsComponent implements OnInit{
 
   }
 
+  //get details with the method in ApiService giving the id of the character
   ngOnInit(): void {
     this.route.params.pipe( take(1) ).subscribe((params: Params) => {
       const id = params['id']
@@ -26,6 +27,7 @@ export class CharacterDetailsComponent implements OnInit{
     })
   }
 
+  //go to character list again
   onGoBack() {
     this.location.back()
   }

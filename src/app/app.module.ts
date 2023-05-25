@@ -21,6 +21,7 @@ import { CharacterDetailsComponent } from './components/characterslist/character
 import { EpisodeslistComponent } from './components/episodeslist/episodeslist.component';
 import { SpinnerInterceptor } from './components/interceptors/spinner.interceptor';
 import { SpinnerModule } from './components/spinner/spinner.module';
+import { LocationsComponent } from './components/locations/locations.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SpinnerModule } from './components/spinner/spinner.module';
     CharacterslistComponent,
     CharacterDetailsComponent,
     EpisodeslistComponent,
+    LocationsComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,10 +17,12 @@ export class EpisodeslistComponent {
 
   unsubcribe$ = new Subject<void>();
 
+  //method OnInit that call the addData method
   ngOnInit(): void {
     this.addData()
   }
 
+  //same method that in CharacterList but this time I get all the episodes at once so I dont have to use a paginator
   addData() {
     this.apiService.getAllEpisodes().pipe(
       takeUntil(this.unsubcribe$),
@@ -31,6 +33,7 @@ export class EpisodeslistComponent {
       })).subscribe()
   }
 
+  //unsubcribe when the API request end
   ngOnDestroy() {
     this.unsubcribe$.next()
   }
